@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section-top">
+{#        <img src="{% static 'img/slider0.jpg' %}" class="img-responsive">#}
+    </div>
+    <div class="section section1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">
+                        Новые поступления
+                    </h1>
+                </div>
+
+
+
+                <div class="center-content">
+                    <div class="center-content-inner">
+                        <h3 class="article-group-title no-b" style="margin-top: 0"> Тест выбора профессий</h3>
+
+                        <div class="stat-off-test">
+                            <div class="q-numbers">
+                                <div class="start-q-number">{{ start }}</div>
+                                <div class="end-q-number">end</div>
+                            </div>
+                            <div class="status-bar"><div style="width: 9.0909090909091%;" class="bar-percent"></div>
+
+                                <span>1</span>
+
+                            </div>
+                        </div>
+
+                        <form name="test-vybora-professij" method="post" action=""> {% csrf_token %}
+                            <div class="answers">
+
+
+                                <div class="image-outer">
+{#                                   image here#}
+                                </div>
+
+
+                                <div class="question">Тебе больше нравится:</div>
+
+
+                                <div class="answer-item">
+                                    <input class="radio" name="answer" id="answer_1" value="1" type="radio">
+                                    <label for="answer_1"> Управлять людьми.</label>
+                                </div>
+
+                                <div class="answer-item">
+                                    <input class="radio" name="answer" id="answer_2" value="2" type="radio">
+                                    <label for="answer_2"> Заботиться о ком-то.</label>
+                                </div>
+
+                                <div class="answer-item">
+                                    <input class="radio" name="answer" id="answer_3" value="3" type="radio">
+                                    <label for="answer_3"> Придумывать что-то новое.</label>
+                                </div>
+
+                                <div class="answer-item">
+                                    <input class="radio" name="answer" id="answer_4" value="4" type="radio">
+                                    <label for="answer_4"> Давать рекомендации, консультации.</label>
+                                </div>
+                                <div style="color: red; margin-bottom: -1.5em"></div>
+
+                            </div>
+                            <button class="newbutton begin-test-button green" type="submit" name="submit">Следующий вопрос</button>
+                        </form>
+                        <script>
+                        function check() {
+                            if (!$("input:radio:checked"))
+                                alert('Выберите вариант ответа!');
+                        }
+                    </script>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+{#    <div class="section section-delivery">#}
+{#        <div>#}
+{#            <h3>Free shipping</h3>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="section section2 phones-container">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12">#}
+{#                    <h1 class="text-center">#}
+{#                        Телофоны#}
+{#                    </h1>#}
+{#                </div>#}
+{#                {% for product_image in products_images_phones %}#}
+{#                    {% include 'landing/product_item.html' %}#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="section section3 laptops-container">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12">#}
+{#                    <h1 class="text-center">#}
+{#                        Ноутбуки#}
+{#                    </h1>#}
+{#                </div>#}
+{#                {% for product_image in products_images_laptops %}#}
+{#                    {% include 'landing/product_item.html' %}#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock content %}
